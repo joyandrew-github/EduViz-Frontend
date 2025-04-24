@@ -1,0 +1,1319 @@
+/* LearningPage.module.css */
+
+/* Root container to fill entire page with dark background */
+.pageRoot {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    color: #b3b3b3;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    position: relative;
+  }
+  
+  /* Apply to all children to mimic * behavior within this scope */
+  .pageRoot * {
+    box-sizing: border-box;
+  }
+  
+  .learningContainer {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 280px;
+    background: #151515;
+    border-right: 1px solid #333;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .courseTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .navMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  
+  .navItem {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #b3b3b3;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+  }
+  
+  .navItem:hover {
+    background: #252525;
+    color: #f0f0f0;
+  }
+  
+  .navItem.active {
+    background: linear-gradient(90deg, rgba(102, 23, 203, 0.2), rgba(203, 33, 142, 0.2));
+    color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .navItem.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 0 2px 2px 0;
+  }
+  
+  .navIcon {
+    margin-right: 12px;
+    font-size: 18px;
+  }
+  
+  .moduleProgress {
+    margin-top: auto;
+    padding: 16px;
+    background: #202020;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+  
+  .progressTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 12px;
+  }
+  
+  .progressBar {
+    height: 8px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    border-radius: 4px;
+  }
+  
+  .progressText {
+    font-size: 12px;
+    color: #b3b3b3;
+    text-align: right;
+    margin: 4px 0 0;
+  }
+  
+  /* Content Area Styles */
+  .contentArea {
+    flex: 1;
+    padding: 32px;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contentHeader {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  
+  .contentMeta {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .moduleIndicator {
+    background: #6617cb;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  
+  .moduleType {
+    background: #333;
+    color: #b3b3b3;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  
+  .mainContent {
+    flex: 1;
+  }
+  
+/* Model Content Section */
+.modelContentSection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .modelViewerContainer {
+    width: 100%;
+    height: 400px;
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .modelViewerContainer:hover {
+    border-color: #6617cb;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modelCoverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .modelViewerContainer:hover .modelCoverImage {
+    transform: scale(1.05);
+  }
+  
+  /* Remove modelPlaceholder since it's replaced by modelCoverImage */
+  .modelPlaceholder {
+    display: none; /* Hide placeholder */
+  }
+  
+  .modelControls {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .modelControls:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .controlsTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 16px;
+  }
+  
+  .controlsTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 2px;
+  }
+  
+  .controlsGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 16px; /* Space before the new button */
+  }
+  
+  .controlButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #b3b3b3;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .controlButton:hover {
+    background: #333;
+    color: #f0f0f0;
+    border-color: #6617cb;
+    transform: translateY(-2px);
+  }
+  
+  .controlIcon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .modelInfo {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .modelInfo:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .infoTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 16px;
+  }
+  
+  .descriptionTitle {
+    position: relative;
+    padding-left: 16px;
+  }
+  
+  .descriptionTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 2px;
+  }
+  
+  .infoDescription {
+    color: #b3b3b3;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  
+  .learningSections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .learningSection h4 {
+    font-size: 16px;
+    color: #f0f0f0;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 12px;
+  }
+  
+  .learningSection h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #6617cb;
+    border-radius: 1.5px;
+  }
+  
+  .componentList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .componentItem {
+    display: flex;
+    align-items: center;
+    color: #b3b3b3;
+    font-size: 14px;
+  }
+  
+  .componentDot {
+    width: 8px;
+    height: 8px;
+    background: #cb218e;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .loadingContainer {
+    font-size: 16px;
+    color: #b3b3b3;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* New exploreButton style (variation of startButton/reviewButton) */
+  .exploreButton {
+    background: linear-gradient(90deg, #cb218e, #6617cb); /* Reversed gradient for distinction */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 16px; /* Space from controlsGrid */
+  }
+  
+  .exploreButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Existing styles for other sections (messages, assessment, resources, etc.) remain unchanged... */
+  /* Messages Section */
+  .messagesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .messageFilters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .filterButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .filterButton:hover {
+    background: #252525;
+    color: #f0f0f0;
+  }
+  
+  .filterButton.active {
+    background: #6617cb;
+    color: white;
+    border-color: #6617cb;
+  }
+  
+  .messageList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .messageCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .messageCard:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .messageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  
+  .messageAuthor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .authorAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6617cb, #cb218e);
+  }
+  
+  .authorInfo h4 {
+    color: #f0f0f0;
+    margin: 0 0 4px;
+    font-size: 16px;
+  }
+  
+  .messageTime {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .messageType {
+    background: #333;
+    color: #b3b3b3;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .messageContent {
+    margin-bottom: 16px;
+    color: #b3b3b3;
+    line-height: 1.6;
+  }
+  
+  .messageActions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .actionButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .actionButton:hover {
+    background: #333;
+    color: #f0f0f0;
+    border-color: #6617cb;
+  }
+  /* Add these new styles to your LearningPage.module.css file */
+
+/* Chat header for Messages section */
+.chatHeader {
+    background: #202020;
+    border-radius: 12px;
+    border: 1px solid #333;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .chatTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0;
+  }
+  
+  .chatParticipants {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .participantAvatars {
+    display: flex;
+    margin-right: 8px;
+  }
+  
+  .instructorAvatar, .studentAvatar, .otherStudentAvatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    margin-left: -8px;
+    border: 2px solid #202020;
+  }
+  
+  .instructorAvatar {
+    background: linear-gradient(135deg, #6617cb, #cb218e);
+    z-index: 2;
+  }
+  
+  .studentAvatar {
+    background: linear-gradient(135deg, #10b981, #0891b2);
+    z-index: 1;
+  }
+  
+  .otherStudentAvatar {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+  }
+  
+  .onlineStatus {
+    font-size: 12px;
+    color: #10b981;
+  }
+  
+  /* Updated message styles */
+  .messageCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 20px;
+    transition: all 0.2s ease;
+    margin-bottom: 16px;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .messageCard:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .studentMessage {
+    background: rgba(16, 185, 129, 0.05);
+    border-left: 3px solid #10b981;
+  }
+  
+  .messageAuthor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .authorAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6617cb, #cb218e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .authorInfo {
+    flex: 1;
+  }
+  
+  .authorInfo h4 {
+    color: #f0f0f0;
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .messageTime {
+    font-size: 12px;
+    color: #777;
+    display: block;
+  }
+  
+  .messageType {
+    background: #333;
+    color: #b3b3b3;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+  
+  .messageContent {
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  
+  .messageContent p {
+    margin-bottom: 12px;
+  }
+  
+  .messageContent p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Attachment styling */
+  .attachmentPreview {
+    display: flex;
+    align-items: center;
+    background: #252525;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+  
+  .attachmentIcon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+  
+  .attachmentInfo {
+    flex: 1;
+  }
+  
+  .attachmentName {
+    display: block;
+    color: #f0f0f0;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .attachmentSize {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .downloadButton {
+    background: transparent;
+    border: 1px solid #6617cb;
+    color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .downloadButton:hover {
+    background: rgba(102, 23, 203, 0.2);
+  }
+  
+  /* Action buttons */
+  .messageActions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .actionButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .actionButton:hover {
+    background: #333;
+    color: #f0f0f0;
+    border-color: #6617cb;
+  }
+  
+  .actionIcon {
+    font-size: 14px;
+  }
+  
+  /* Message editor */
+  .messageEditor {
+    background: #252525;
+    border-radius: 8px;
+    border: 1px solid #333;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  
+  .messageEditor textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    color: #f0f0f0;
+    resize: none;
+    height: 80px;
+    outline: none;
+  }
+  
+  .editorControls {
+    display: flex;
+    border-top: 1px solid #333;
+    padding: 8px;
+  }
+  
+  .formatButton {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  
+  .formatButton:hover {
+    background: #333;
+    color: #f0f0f0;
+  }
+  
+  .sendButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: auto;
+    font-weight: 600;
+  }
+  
+  .sendButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Chat input at the bottom */
+  .chatInput {
+    display: flex;
+    gap: 8px;
+    background: #202020;
+    border-radius: 12px;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-top: 16px;
+  }
+  
+  .chatInput input {
+    flex: 1;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px;
+    color: #f0f0f0;
+    outline: none;
+  }
+  
+  .chatInput input:focus {
+    border-color: #6617cb;
+  }
+  
+  .attachButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .attachButton:hover {
+    background: #333;
+    color: #f0f0f0;
+  }
+  
+  .attachIcon {
+    font-size: 18px;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Assessment Section */
+  .assessmentSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .assessmentSectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 16px;
+  }
+  
+  .assessmentSectionTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 2px;
+  }
+  
+  .upcomingAssessments, .completedAssessments {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .assessmentCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .assessmentCard:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .completedCard {
+    opacity: 0.8;
+  }
+  
+  .assessmentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .assessmentTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0;
+  }
+  
+  .assessmentDue, .assessmentScore {
+    font-size: 14px;
+  }
+  
+  .assessmentDue {
+    color: #cb218e;
+  }
+  
+  .assessmentScore {
+    color: #10b981;
+  }
+  
+  .assessmentDetails {
+    margin-bottom: 16px;
+  }
+  
+  /* Continue from where we left off */
+
+ .assessmentDetails p {
+    margin-bottom: 12px;
+    color: #b3b3b3;
+    line-height: 1.6;
+  }
+  
+  .assessmentMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  
+  .assessmentType, .assessmentPoints, .assessmentTime, .assessmentDate {
+    color: #777;
+  }
+  
+  .assessmentType {
+    background: #333;
+    color: #b3b3b3;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .startButton, .reviewButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .startButton:hover, .reviewButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .reviewButton {
+    background: transparent;
+    border: 1px solid #6617cb;
+    color: #f0f0f0;
+  }
+  
+  .reviewButton:hover {
+    background: rgba(102, 23, 203, 0.2);
+  }
+  
+  /* Resources Section */
+  .resourcesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .resourceCategories {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .categoryButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .categoryButton:hover {
+    background: #252525;
+    color: #f0f0f0;
+  }
+  
+  .categoryButton.active {
+    background: #6617cb;
+    color: white;
+    border-color: #6617cb;
+  }
+  
+  .resourcesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .resourceCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .resourceCard:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .resourceIcon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .resourceInfo {
+    flex: 1;
+  }
+  
+  .resourceTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0 0 12px;
+  }
+  
+  .resourceDescription {
+    color: #b3b3b3;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  
+  .resourceMeta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  
+  .resourceType, .resourceDuration, .resourceSize {
+    color: #777;
+  }
+  
+  .resourceType {
+    background: #333;
+    color: #b3b3b3;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .viewResourceButton {
+    background: transparent;
+    border: 1px solid #6617cb;
+    color: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+  
+  .viewResourceButton:hover {
+    background: rgba(102, 23, 203, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  /* Chat Button & Container */
+  .chatButton {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6617cb, #cb218e);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .chatButton:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .chatIcon {
+    font-size: 24px;
+  }
+  
+  .chatContainer {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 350px;
+    height: 500px;
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+  
+  .chatHeader {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chatHeader h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .closeChat {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  .chatMessages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .botMessage {
+    background: rgba(102, 23, 203, 0.2);
+    padding: 12px 16px;
+    border-radius: 12px 12px 12px 0;
+    color: #f0f0f0;
+    max-width: 80%;
+    align-self: flex-start;
+  }
+  
+  .userMessage {
+    background: rgba(16, 185, 129, 0.2);
+    padding: 12px 16px;
+    border-radius: 12px 12px 0 12px;
+    color: #f0f0f0;
+    max-width: 80%;
+    align-self: flex-end;
+  }
+  
+  .chatInput {
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #333;
+  }
+  
+  .chatInput input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #252525;
+    color: #f0f0f0;
+    outline: none;
+  }
+  
+  .chatInput input:focus {
+    border-color: #6617cb;
+  }
+  
+  .sendButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .controlsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .resourcesList {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .learningContainer {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #333;
+      padding: 16px;
+    }
+    
+    .contentArea {
+      padding: 20px;
+      height: auto;
+    }
+    
+    .modelViewerContainer {
+      height: 300px;
+    }
+    
+    .componentList {
+      grid-template-columns: 1fr;
+    }
+    
+    .resourcesList {
+      grid-template-columns: 1fr;
+    }
+    
+    .chatContainer {
+      width: 100%;
+      height: 60%;
+      bottom: 0;
+      right: 0;
+      border-radius: 16px 16px 0 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .controlsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sectionTitle {
+      font-size: 22px;
+    }
+  
+    .assessmentHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    
+    .messageHeader {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }

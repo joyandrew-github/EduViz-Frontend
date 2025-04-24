@@ -1,0 +1,134 @@
+
+  /* Assessment Section */
+  .assessmentSection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .assessmentSectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 16px;
+  }
+  
+  .assessmentSectionTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 2px;
+  }
+  
+  .upcomingAssessments, .completedAssessments {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .assessmentCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .assessmentCard:hover {
+    border-color: #6617cb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .completedCard {
+    opacity: 0.8;
+  }
+  
+  .assessmentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .assessmentTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0;
+  }
+  
+  .assessmentDue, .assessmentScore {
+    font-size: 14px;
+  }
+  
+  .assessmentDue {
+    color: #cb218e;
+  }
+  
+  .assessmentScore {
+    color: #10b981;
+  }
+  
+  .assessmentDetails {
+    margin-bottom: 16px;
+  }
+  
+  /* Continue from where we left off */
+
+ .assessmentDetails p {
+    margin-bottom: 12px;
+    color: #b3b3b3;
+    line-height: 1.6;
+  }
+  
+  .assessmentMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  
+  .assessmentType, .assessmentPoints, .assessmentTime, .assessmentDate {
+    color: #777;
+  }
+  
+  .assessmentType {
+    background: #333;
+    color: #b3b3b3;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .startButton, .reviewButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .startButton:hover, .reviewButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .reviewButton {
+    background: transparent;
+    border: 1px solid #6617cb;
+    color: #f0f0f0;
+  }
+  
+  .reviewButton:hover {
+    background: rgba(102, 23, 203, 0.2);
+  }

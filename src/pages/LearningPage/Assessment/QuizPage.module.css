@@ -1,0 +1,318 @@
+/* QuizPage.module.css */
+.quizContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .quizHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .backButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+  }
+  
+  .quizTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .quizTimer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #cb218e;
+    font-weight: 600;
+    font-size: 16px;
+    background: rgba(203, 33, 142, 0.1);
+    padding: 8px 14px;
+    border-radius: 20px;
+  }
+  
+  .progressBar {
+    width: 100%;
+    height: 6px;
+    background-color: #333;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progressFill {
+    height: 100%;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  
+  .questionIndicators {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+  
+  .questionIndicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    background: #2a2a2a;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .activeQuestion {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+  }
+  
+  .answeredQuestion {
+    border-color: #6617cb;
+    color: #f0f0f0;
+  }
+  
+  .questionCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 32px;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .questionNumber {
+    font-size: 16px;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  
+  .questionText {
+    font-size: 20px;
+    font-weight: 500;
+    color: #f0f0f0;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .optionItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: #2a2a2a;
+    border-radius: 12px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .optionItem:hover {
+    background: #333;
+    border-color: #6617cb;
+  }
+  
+  .selectedOption {
+    background: rgba(102, 23, 203, 0.2);
+    border-color: #6617cb;
+  }
+  
+  .radioCustom {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .selectedOption .radioCustom {
+    border-color: #cb218e;
+  }
+  
+  .radioInner {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    transition: all 0.2s ease;
+  }
+  
+  .selectedOption .radioInner {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .optionItem label {
+    font-size: 16px;
+    color: #f0f0f0;
+    flex: 1;
+  }
+  
+  .navigationButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+  
+  .navButton {
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #333;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .navButton:hover:not(:disabled) {
+    background: #333;
+    border-color: #6617cb;
+  }
+  
+  .navButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .submitButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    border: none;
+    color: white;
+  }
+  
+  .submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .resultCard {
+    background: #202020;
+    border-radius: 16px;
+    border: 1px solid #333;
+    padding: 32px;
+    text-align: center;
+    animation: popIn 0.4s ease-in-out;
+  }
+  
+  @keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    70% { transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  
+  .resultHeader {
+    margin-bottom: 24px;
+  }
+  
+  .resultHeader h3 {
+    font-size: 24px;
+    color: #f0f0f0;
+    margin-bottom: 24px;
+  }
+  
+  .scoreCircle {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .scoreChart {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* We've moved the styling directly to the SVG elements for better compatibility */
+  .scoreText {
+    font-size: 8px;
+    font-weight: 500;
+  }
+  
+  .scoreDetail {
+    font-size: 18px;
+    color: #b3b3b3;
+    margin-bottom: 32px;
+  }
+  
+  .resultButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .reviewAnswersButton, .returnButton {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .reviewAnswersButton {
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: white;
+    border: none;
+  }
+  
+  .returnButton {
+    background: transparent;
+    border: 1px solid #6617cb;
+    color: #f0f0f0;
+  }
+  
+  .reviewAnswersButton:hover, .returnButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }

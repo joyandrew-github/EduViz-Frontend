@@ -1,0 +1,337 @@
+/* ModelEnrollPage.module.css */
+
+/* Root container to fill entire page with dark background */
+.pageRoot {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    color: #b3b3b3;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+  }
+  
+  /* Apply to all children to mimic * behavior within this scope */
+  .pageRoot * {
+    box-sizing: border-box;
+  }
+  
+  .modelEnrollContainer {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 18px;
+    color: #f0f0f0;
+    background: #252525;
+    border-radius: 16px;
+  }
+  
+  .errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background: #252525;
+    border-radius: 16px;
+    padding: 32px;
+  }
+  
+  .errorContainer h2 {
+    color: #f0f0f0;
+    margin-bottom: 24px;
+  }
+  
+  .backButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: #b3b3b3;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+  
+  .backButton:hover {
+    background: #333;
+    color: #f0f0f0;
+    border-color: #6617cb;
+  }
+  
+  .modelHeader {
+    margin-bottom: 32px;
+  }
+  
+  .modelTitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  
+  .newBadge {
+    background: #cb218e;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+  
+  .modelMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  .category {
+    background: #333;
+    color: #b3b3b3;
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+  
+  .difficulty {
+    background: #10b981;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+  
+  .rating {
+    color: #f0f0f0;
+  }
+  
+  .instructor {
+    color: #f0f0f0;
+  }
+  
+  .updated {
+    color: #777;
+  }
+  
+  .modelContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .modelPreview {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .modelImageContainer {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+  
+  .modelImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .modelImageContainer:hover .modelImage {
+    transform: scale(1.05);
+  }
+  
+  .pricingCard {
+    background: #252525;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+  
+  .pricingCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: #6617cb;
+  }
+  
+  .priceTag {
+    font-size: 28px;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 24px;
+  }
+  
+  .actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .buyButton {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #6617cb, #cb218e);
+    color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .buyButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cartButton {
+    padding: 12px 24px;
+    background: transparent;
+    color: #f0f0f0;
+    border: 1px solid #6617cb;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .cartButton:hover {
+    background: rgba(102, 23, 203, 0.2);
+  }
+  
+  .cartButton.added {
+    background: #10b981;
+    border-color: #10b981;
+    color: white;
+    pointer-events: none;
+  }
+  
+  .modelDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .descriptionBox, .learningPoints {
+    background: #252525;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+  
+  .descriptionBox:hover, .learningPoints:hover {
+    border-color: #6617cb;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 16px;
+  }
+  
+  .sectionTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #6617cb, #cb218e);
+    border-radius: 2px;
+  }
+  
+  .descriptionText {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #b3b3b3;
+  }
+  
+  .learningList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .learningItem {
+    margin-bottom: 12px;
+    padding-left: 28px;
+    position: relative;
+    font-size: 16px;
+    color: #b3b3b3;
+  }
+  
+  .checkmark {
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .modelContent {
+      grid-template-columns: 1fr;
+    }
+    
+    .modelImageContainer {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modelEnrollContainer {
+      padding: 16px;
+    }
+    
+    .modelTitle {
+      font-size: 24px;
+    }
+    
+    .modelMeta {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .priceTag {
+      font-size: 24px;
+    }
+    
+    .actionButtons {
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,511 @@
+/* Settings Page Container Layout */
+.settingsPageContainer {
+  display: flex;
+  background: #202020;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar Styling */
+.settingsSidebar {
+  width: 280px;
+  background: #181818;
+  border-right: 1px solid #333;
+  padding: 0 0 24px 0;
+}
+
+.userProfileHeader {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  background: #202020;
+  border-bottom: 1px solid #333;
+}
+
+.profileAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6617cb, #cb218e);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profileName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f0f0f0;
+  line-height: 1.4;
+}
+
+.profileEmail {
+  font-size: 14px;
+  color: #b3b3b3;
+  line-height: 1.4;
+}
+
+/* Navigation Menu */
+.settingsNavigation {
+  margin-top: 16px;
+}
+
+.settingsNavItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px 24px;
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: left;
+}
+
+.settingsNavItem:hover {
+  background: #252525;
+  color: #f0f0f0;
+}
+
+.settingsNavItem.active {
+  background: #252525;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+.settingsNavItem.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, #6617cb, #cb218e);
+  border-radius: 0 2px 2px 0;
+}
+
+.navItemIcon {
+  margin-right: 14px;
+  font-size: 18px;
+}
+
+/* Main Content Area */
+.settingsMainContent {
+  flex-grow: 1;
+  padding: 32px;
+  background: #202020;
+  overflow-y: auto;
+}
+
+.settingsContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Page Title Styling */
+.pageTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.pageTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, #6617cb, #cb218e);
+  border-radius: 2px;
+}
+
+.welcomeSubtitle {
+  font-size: 16px;
+  color: #b3b3b3;
+  margin-bottom: 32px;
+}
+
+/* Settings Container */
+.settingsContainer {
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  gap: 32px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Image Upload */
+.profileImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileAvatar.largeAvatar {
+  width: 120px;
+  height: 120px;
+  font-size: 42px;
+  margin-right: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatarUploadOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.profileAvatar.largeAvatar:hover .avatarUploadOverlay {
+  opacity: 1;
+}
+
+.avatarUploadIcon {
+  font-size: 32px;
+  color: #fff;
+}
+
+.fileInputHidden {
+  display: none;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textButton {
+  background: transparent;
+  border: none;
+  color: #6617cb;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.textButton:hover {
+  color: #cb218e;
+  text-decoration: underline;
+}
+
+/* Form Styling */
+.settingsForm {
+  flex-grow: 1;
+}
+
+.formSection {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 12px;
+}
+
+.sectionTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(180deg, #6617cb, #cb218e);
+  border-radius: 2px;
+}
+
+.settingsInput {
+  width: 100%;
+  padding: 14px 16px;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #f0f0f0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.settingsInput:focus {
+  outline: none;
+  border-color: #6617cb;
+  box-shadow: 0 0 0 2px rgba(102, 23, 203, 0.2);
+}
+
+/* Link Input Groups */
+.linkInputGroup {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.linkPrefix {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-right: none;
+  padding: 14px 16px;
+  color: #b3b3b3;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-size: 14px;
+}
+
+.settingsInputWithPrefix {
+  flex-grow: 1;
+  padding: 14px 16px;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: #f0f0f0;
+  font-size: 14px;
+}
+
+.settingsInputWithPrefix:focus {
+  outline: none;
+  border-color: #6617cb;
+  box-shadow: 0 0 0 2px rgba(102, 23, 203, 0.2);
+}
+
+/* Form Actions */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.primaryButton {
+  background: linear-gradient(90deg, #6617cb, #cb218e);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Security Section */
+.securitySection {
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.passwordInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.securityDescription {
+  color: #b3b3b3;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.mfaSection {
+  background: #252525;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+/* Profile View */
+.profileViewContainer {
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profileViewContainer h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin: 16px 0 8px;
+}
+
+.profileViewContainer p {
+  color: #b3b3b3;
+  margin-bottom: 24px;
+}
+
+.profileDetails {
+  width: 100%;
+  text-align: left;
+  background: #252525;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.profileDetails p {
+  margin: 8px 0;
+  color: #b3b3b3;
+}
+
+/* Logout Container */
+.logoutContainer {
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logoutContainer p {
+  color: #b3b3b3;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .settingsPageContainer {
+    flex-direction: column;
+  }
+
+  .settingsSidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .settingsNavigation {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 0;
+    padding: 0 16px;
+  }
+
+  .settingsNavItem {
+    flex-shrink: 0;
+    padding: 12px 16px;
+  }
+  
+  .settingsNavItem.active::before {
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    top: auto;
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .settingsContainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+  }
+
+  .settingsMainContent {
+    padding: 16px;
+  }
+  
+  .securitySection,
+  .profileViewContainer,
+  .logoutContainer {
+    padding: 24px 16px;
+  }
+}
+/* Modified User Profile Header with New Class Names - Stacked Layout */
+.stackedProfileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background: #202020;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+.stackedProfileAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6617cb, #cb218e);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stackedProfileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.stackedProfileName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0f0f0;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.stackedProfileEmail {
+  font-size: 14px;
+  color: #b3b3b3;
+  line-height: 1.4;
+}

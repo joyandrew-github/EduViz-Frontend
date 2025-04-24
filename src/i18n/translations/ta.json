@@ -1,0 +1,97 @@
+{
+  "common": {
+    "buttons": {
+      "submit": "சமர்ப்பி",
+      "cancel": "ரத்து செய்",
+      "save": "சேமி",
+      "delete": "நீக்கு",
+      "edit": "திருத்து",
+      "view": "பார்வையிடு",
+      "search": "தேடு",
+      "login": "உள்நுழை",
+      "signup": "பதிவு செய்",
+      "logout": "வெளியேறு"
+    },
+    "navigation": {
+      "home": "முகப்பு",
+      "explore": "ஆராய்",
+      "courses": "பாடநெறிகள்",
+      "about": "எங்களை பற்றி",
+      "contact": "தொடர்பு"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "பாடநெறிகளைத் தேடுங்கள்...",
+    "notifications": "அறிவிப்புகள்",
+    "profile": "சுயவிவரம்",
+    "settings": "அமைப்புகள்"
+  },
+  "footer": {
+    "quickLinks": "விரைவு இணைப்புகள்",
+    "home": "முகப்பு",
+    "exploreModels": "மாதிரிகளை ஆராயுங்கள்",
+    "howItWorks": "இது எப்படி செயல்படுகிறது",
+    "pricing": "விலை",
+    "contactUs": "எங்களை தொடர்பு கொள்ள",
+    "forCreators": "படைப்பாளர்களுக்கு",
+    "becomeCreator": "படைப்பாளராகுங்கள்",
+    "creatorGuidelines": "படைப்பாளர் வழிகாட்டுதல்கள்",
+    "creatorFAQ": "படைப்பாளர் கேள்விகள்",
+    "resources": "வளங்கள்",
+    "newsletter": "செய்திமடல்",
+    "subscribeText": "புதிய மாதிரிகள் மற்றும் அம்சங்கள் பற்றிய சமீபத்திய புதுப்பிப்புகளைப் பெற குழுசேரவும்.",
+    "emailPlaceholder": "உங்கள் மின்னஞ்சல் முகவரி",
+    "subscribe": "குழுசேர்",
+    "allRightsReserved": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+    "termsOfService": "சேவை விதிமுறைகள்",
+    "privacyPolicy": "தனியுரிமைக் கொள்கை"
+  },
+  "auth": {
+    "login": {
+      "title": "மீண்டும் வரவேற்கிறோம்",
+      "emailLabel": "மின்னஞ்சல் முகவரி",
+      "passwordLabel": "கடவுச்சொல்",
+      "forgotPassword": "கடவுச்சொல் மறந்துவிட்டதா?",
+      "noAccount": "கணக்கு இல்லையா?",
+      "signupHere": "இங்கே பதிவு செய்யுங்கள்"
+    },
+    "signup": {
+      "title": "கணக்கை உருவாக்கு",
+      "nameLabel": "முழு பெயர்",
+      "emailLabel": "மின்னஞ்சல் முகவரி",
+      "passwordLabel": "கடவுச்சொல்",
+      "confirmPasswordLabel": "கடவுச்சொல்லை உறுதிப்படுத்து",
+      "hasAccount": "ஏற்கனவே கணக்கு உள்ளதா?",
+      "loginHere": "இங்கே உள்நுழையுங்கள்"
+    }
+  },
+  "courses": {
+    "featured": "சிறப்பு பாடநெறிகள்",
+    "popular": "பிரபலமான பாடநெறிகள்",
+    "new": "புதிய பாடநெறிகள்",
+    "categories": "வகைகள்",
+    "filters": {
+      "all": "அனைத்தும்",
+      "free": "இலவசம்",
+      "paid": "கட்டணம்",
+      "sortBy": "வரிசைப்படுத்து",
+      "newest": "புதியவை",
+      "popular": "பிரபலமானவை",
+      "priceHighToLow": "விலை: உயர்ந்தது முதல் குறைந்தது வரை",
+      "priceLowToHigh": "விலை: குறைந்தது முதல் உயர்ந்தது வரை"
+    }
+  },
+  "profile": {
+    "myLearning": "எனது கற்றல்",
+    "myCourses": "எனது பாடநெறிகள்",
+    "wishlist": "விருப்பப்பட்டியல்",
+    "achievements": "சாதனைகள்",
+    "settings": {
+      "title": "அமைப்புகள்",
+      "account": "கணக்கு அமைப்புகள்",
+      "notifications": "அறிவிப்பு அமைப்புகள்",
+      "privacy": "தனியுரிமை அமைப்புகள்",
+      "language": "மொழி அமைப்புகள்"
+    }
+  }
+} 

@@ -1,0 +1,503 @@
+/* HeroSection.module.css */
+.heroWrapper {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0a0a0a;
+  perspective: 1500px;
+}
+
+.heroBackgroundPreload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  z-index: 0;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-style: preserve-3d;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6617cb, #cb218e);
+  opacity: 0.4;
+  filter: blur(50px);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.shape1 {
+  width: 400px;
+  height: 400px;
+  top: -150px;
+  right: -100px;
+}
+
+.shape2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  left: -50px;
+}
+
+.shape3 {
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 20%;
+}
+
+.shape4 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  right: 15%;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.7) 50%, rgba(10, 10, 10, 0.4) 100%);
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+/* Left side - Content */
+.heroContent {
+  flex: 1;
+  max-width: 60%;
+  padding-right: 60px;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(102, 23, 203, 0.15), rgba(203, 33, 142, 0.15));
+  color: #ae6df2;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border: 1px solid rgba(102, 23, 203, 0.3);
+  box-shadow: 0 0 20px rgba(102, 23, 203, 0.2);
+  backdrop-filter: blur(4px);
+;
+}
+
+.heroHeadline {
+  font-size: 3.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #b3b3b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+}
+
+.heroSubtext {
+  font-size: 1.25rem;
+  color: #b3b3b3;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.heroFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featureItem:hover {
+  background: rgba(102, 23, 203, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 23, 203, 0.15);
+}
+
+.featureIcon {
+  width: 24px;
+  height: 24px;
+  color: #ae6df2;
+}
+
+.featureText {
+  color: #d1d1d1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.heroCta {
+  display: flex;
+  gap: 20px;
+}
+
+.ctaButton {
+  padding: 14px 28px;
+  border: 1px solid #6617cb; /* Thinner border for elegance */
+  border-radius: 8px; /* Less rounded for professional look */
+  background-color: transparent;
+  color: #ae6df2;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: none; /* Removed box shadow */
+  letter-spacing: 0.5px; /* Added letter spacing for elegance */
+}
+
+.ctaButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #6617cb, #cb218e);
+  transition: all 0.3s ease; /* Smoother transition */
+  z-index: -1;
+  opacity: 0.95; /* Slightly transparent for sophistication */
+}
+
+
+.ctaButton:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 23, 203, 0.4);
+}
+
+.ctaButton:hover::before {
+  width: 100%;
+}
+
+.ctaButton.primary {
+  background: linear-gradient(90deg, #6617cb, #cb218e);
+  color: #ffffff;
+}
+
+.ctaButton.primary::before {
+  background: linear-gradient(90deg, #5214a3, #a11a72);
+}
+
+.ctaButton.primary:hover {
+  border-color: #5214a3;
+}
+
+/* Right side - 3D Model */
+.heroModelContainer {
+  flex: 1;
+  max-width: 50%;
+  height: 70vh;
+  max-height: 700px;
+  position: relative;
+  will-change: transform, opacity;
+  z-index: 4;
+  transform-style: preserve-3d;
+}
+
+.modelWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(102, 23, 203, 0.3);
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(30, 41, 59, 0.5) 100%);
+  border: 1px solid rgba(102, 23, 203, 0.2);
+}
+
+.modelCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .heroContainer {
+    padding: 0 30px;
+  }
+  
+  .heroContent {
+    padding-right: 40px;
+  }
+  
+  .heroHeadline {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .heroContainer {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  
+  .heroContent {
+    max-width: 100%;
+    text-align: center;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .heroHeadline {
+    font-size: 3.2rem;
+  }
+  
+  .heroFeatures {
+    justify-content: center;
+  }
+  
+  .heroModelContainer {
+    max-width: 80%;
+    height: 50vh;
+  }
+  
+  .heroOverlay {
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.6) 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroHeadline {
+    font-size: 2.8rem;
+  }
+  
+  .heroSubtext {
+    font-size: 1.1rem;
+  }
+  
+  .heroFeatures {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .featureItem {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .ctaButton {
+    width: 100%;
+    padding: 14px 25px;
+    font-size: 1rem;
+  }
+  
+  .heroModelContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroHeadline {
+    font-size: 2.2rem;
+  }
+  
+  .heroSubtext {
+    font-size: 1rem;
+  }
+  
+  .heroBadge {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  
+  .ctaButton {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+/* Update these styles in your HeroSection.module.css file */
+
+/* Make the model canvas background transparent */
+.modelCanvas {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove container styling */
+.heroModelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+}
+
+/* Remove the model wrapper background */
+.modelWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Remove or adjust the glow effect */
+.modelGlow {
+  display: none; /* Remove completely */
+  /* Or make it transparent but keep the effect */
+  /*
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  filter: blur(30px);
+  opacity: 0.4;
+  z-index: 1;
+  */
+}
+/* Add these styles to your HeroSection.module.css file */
+
+/* Reset the model container styles for model-viewer */
+.modelWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Style model-viewer element */
+.modelViewer {
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  background-color: transparent;
+  --progress-bar-color: #6617cb;
+  --progress-bar-height: 5px;
+}
+
+/* Optional loading spinner */
+.modelLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(102, 23, 203, 0.3);
+  border-radius: 50%;
+  border-top-color: #6617cb;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Adjust container styles */
+.heroModelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  max-width: 50%;
+  height: 70vh;
+  max-height: 700px;
+}
+
+/* Create an optional subtle glow effect */
+.modelWrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(102, 23, 203, 0.2) 0%, rgba(203, 33, 142, 0) 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}

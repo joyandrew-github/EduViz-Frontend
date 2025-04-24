@@ -1,0 +1,289 @@
+/* How It Works Section */
+.howItWorksSection {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 130px 0; /* Preserving original size */
+  overflow: hidden;
+  will-change: opacity, transform;
+}
+
+/* Animated background effect */
+.howItWorksSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(90, 24, 154, 0.15) 0%, transparent 50%);
+  animation: backgroundPulse 10s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0; /* Behind content */
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* Above background, below content */
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(157, 78, 221, 0.3);
+  border-radius: 50%;
+}
+
+.particle:nth-child(1) { animation: floatParticle 15s infinite linear; top: 15%; left: 15%; }
+.particle:nth-child(2) { animation: floatParticle 20s infinite linear; top: 45%; left: 70%; }
+.particle:nth-child(3) { animation: floatParticle 25s infinite linear; top: 75%; left: 25%; }
+.particle:nth-child(4) { animation: floatParticle 18s infinite linear; top: 30%; left: 90%; }
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-200px, -200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes backgroundPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+.stepsContainer {
+  display: flex; /* Preserving original layout */
+  justify-content: space-between;
+  max-width: 1000px; /* Preserving original size */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Above particles and background */
+}
+
+.stepCard {
+  flex: 1;
+  padding: 30px; /* Preserving original size */
+  text-align: center;
+  position: relative;
+  max-width: 300px; /* Preserving original size */
+  margin: 0 15px; /* Preserving original size */
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(157, 78, 221, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.stepCard:nth-child(1) { animation-delay: 0.2s; }
+.stepCard:nth-child(2) { animation-delay: 0.4s; }
+.stepCard:nth-child(3) { animation-delay: 0.6s; }
+
+.stepCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(157, 78, 221, 0.5);
+  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.2);
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #9d4edd, #5a189a);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.stepCard:hover::before {
+  transform: scaleX(1);
+}
+
+.stepNumber {
+  width: 40px; /* Preserving original size */
+  height: 40px; /* Preserving original size */
+  background: linear-gradient(135deg, #9d4edd, #5a189a); /* Updated to gradient */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 25px; /* Preserving original size */
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stepNumber::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: rgba(157, 78, 221, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+}
+
+.stepIcon {
+  font-size: 2.5rem; /* Preserving original size */
+  color: #9d4edd; /* Updated color */
+  margin-bottom: 20px; /* Preserving original size */
+  transition: all 0.3s ease;
+}
+
+.stepCard:hover .stepIcon {
+  transform: scale(1.2) rotate(5deg);
+  color: #5a189a;
+}
+
+.stepTitle {
+  font-size: 1.3rem; /* Preserving original size */
+  font-weight: 600;
+  margin-bottom: 15px; /* Preserving original size */
+  color: #fff; /* Updated to match new style */
+}
+
+.stepDescription {
+  font-size: 1rem; /* Preserving original size */
+  color: #a8a8a8; /* Updated to match new style */
+  line-height: 1.5; /* Preserving original size */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design - Preserving original breakpoints */
+@media (max-width: 992px) {
+  .stepsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stepCard {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .howItWorksSection {
+    padding: 100px 0; /* Preserving original size */
+  }
+  .stepCard {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stepCard {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 10px 20px;
+  }
+}
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2; /* Above particles */
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #9d4edd 0%, #5a189a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: #a8a8a8;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+  }
+}

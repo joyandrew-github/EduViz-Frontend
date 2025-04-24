@@ -1,0 +1,376 @@
+/* InstructorMessaging.module.css */
+/* Color Theme Variables */
+:root {
+  --primary-color: #6617cb;
+  --primary-gradient: linear-gradient(135deg, #6617cb, #cb218e);
+  --secondary-color: #10b981;
+  --background-dark: #151515;
+  --background-light: #202020;
+  --border-color: #333;
+  --text-primary: #f0f0f0;
+  --text-secondary: #b3b3b3;
+  --online-status: #10b981;
+  --offline-status: #777;
+}
+
+/* Main container */
+.messagingContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--background-dark);
+  color: var(--text-primary);
+}
+
+/* Message list */
+.messageList {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--background-dark);
+}
+
+.messageItem {
+  display: flex;
+  gap: 12px;
+  max-width: 70%;
+  align-items: flex-start;
+}
+
+.userMessage {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.studentMessage {
+  align-self: flex-start;
+}
+
+.messageSenderAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  flex-shrink: 0;
+  background: var(--primary-gradient);
+}
+
+.messageContent {
+  background: var(--background-light);
+  padding: 12px 16px;
+  border-radius: 16px;
+  position: relative;
+  min-width: 80px;
+}
+
+.userMessage .messageContent {
+  background: rgba(102, 23, 203, 0.1);
+  border: 1px solid rgba(102, 23, 203, 0.2);
+  border-radius: 16px 16px 0 16px;
+}
+
+.studentMessage .messageContent {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 16px 16px 16px 0;
+}
+
+.messageText {
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  margin: 0;
+  word-break: break-word;
+}
+
+.messageTime {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Chat header */
+.chatHeader {
+  padding: 16px 24px;
+  background: var(--background-light);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.studentProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.studentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.studentInfo h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.studentStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.online {
+  background: var(--online-status);
+}
+
+.offline {
+  background: var(--offline-status);
+}
+
+.statusText {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Message input area */
+.messageInputContainer {
+  padding: 16px 24px;
+  background: var(--background-light);
+  border-top: 1px solid var(--border-color);
+}
+
+.messageComposer {
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.messageInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  resize: none;
+  min-height: 24px;
+  max-height: 120px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.messageControls {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid var(--border-color);
+  align-items: center;
+}
+
+.inputActions {
+  display: flex;
+  gap: 8px;
+}
+
+.emojiButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.emojiButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.sendButton {
+  margin-left: auto;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sendButton:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.sendButton:disabled {
+  background: var(--border-color);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Image handling */
+.fileInput {
+  display: none;
+}
+
+.sharedImage {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sharedImage:hover {
+  transform: scale(1.02);
+}
+
+.imagePreviewContainer {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.imagePreview {
+  position: relative;
+  display: inline-block;
+}
+
+.imagePreview img {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+}
+
+.removeImageButton {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ff4444;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.removeImageButton:hover {
+  background: #cc0000;
+}
+
+/* Image modal */
+.imageModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.closeModalButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Emoji picker */
+.emojiPickerContainer {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  z-index: 10;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .messageItem {
+    max-width: 85%;
+  }
+
+  .chatHeader {
+    padding: 12px 16px;
+  }
+
+  .messageInputContainer {
+    padding: 12px 16px;
+  }
+
+  .messageList {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .messageItem {
+    max-width: 90%;
+  }
+
+  .sharedImage {
+    max-width: 160px;
+    max-height: 160px;
+  }
+}

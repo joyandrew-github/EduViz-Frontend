@@ -1,0 +1,257 @@
+/* components/Navbar/Navbar.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background-color: rgba(13, 12, 13, 0.505);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header.scrolled {
+  background-color: rgba(33, 29, 33, 0.603);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-bottom: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  font-family: 'Kalnia Glaze';
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+  color: #ae6df2;
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLink:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ae6df2;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.authButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.button {
+  padding: 10px 24px;
+  border: 1.5px solid #ae6df2;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.button:hover {
+  background-color: rgba(174, 109, 242, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(174, 109, 242, 0.2);
+}
+
+.button.primary {
+  background-color: #ae6df2;
+  color: #ffffff;
+}
+
+.button.primary:hover {
+  background-color: #9d5de0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(174, 109, 242, 0.4);
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.languageSelector {
+  position: relative;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.languageButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.globeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ae6df2;
+}
+
+.languageModal {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--background-dark, #1a1b1f);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalHeader {
+  padding: 1rem;
+  color: var(--text-lightest, #ffffff);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.languageList {
+  padding: 0.5rem;
+}
+
+.languageOption {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-lightest, #ffffff);
+  cursor: pointer;
+  text-align: left;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.languageOption:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageOption.selected {
+  background-color: rgba(174, 109, 242, 0.2);
+  color: #ae6df2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .header {
+    padding: 15px 20px;
+  }
+  .navLinks {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    background-color: rgba(45, 45, 45, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  .navLinks {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    margin: 15px 0 0;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .authButtons {
+    margin-left: auto;
+  }
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 24px;
+  }
+  .navLinks {
+    gap: 5px;
+  }
+  .navLink {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .button {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+}

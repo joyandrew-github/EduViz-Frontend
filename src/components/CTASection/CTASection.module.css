@@ -1,0 +1,304 @@
+/* CTA Section */
+.ctaSection {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 100px 0; /* Preserving original size */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0; /* Ensure layering works */
+}
+
+/* Enhanced background animation */
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(90, 24, 154, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.1) 0%, transparent 70%);
+  animation: pulseGradient 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0; /* Behind content */
+}
+
+/* Particle effect */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* Above background, below content */
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(157, 78, 221, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.particle:nth-child(1) { animation: particleFloat 20s infinite linear; top: 20%; left: 10%; }
+.particle:nth-child(2) { animation: particleFloat 25s infinite linear; top: 60%; left: 80%; }
+.particle:nth-child(3) { animation: particleFloat 30s infinite linear; top: 80%; left: 30%; }
+.particle:nth-child(4) { animation: particleFloat 22s infinite linear; top: 40%; left: 60%; }
+.particle:nth-child(5) { animation: particleFloat 28s infinite linear; top: 10%; left: 90%; }
+
+@keyframes particleFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100px, -100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGradient {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 700px; /* Preserving original size */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Above particles and background */
+}
+
+.ctaTitle {
+  font-size: 2.2rem; /* Preserving original size */
+  font-weight: 700;
+  margin-bottom: 20px; /* Preserving original size */
+  background: linear-gradient(135deg, #9d4edd 0%, #5a189a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+  }
+}
+
+.ctaText {
+  font-size: 1.1rem; /* Preserving original size */
+  margin-bottom: 40px; /* Preserving original size */
+  color: #a8a8a8; /* Updated to match new style */
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Preserving original size */
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.ctaButtons .btnPrimary {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #9d4edd 0%, #5a189a 100%);
+  color: white;
+  border: none;
+  animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(157, 78, 221, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(157, 78, 221, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(157, 78, 221, 0);
+  }
+}
+
+.ctaButtons .btnPrimary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(157, 78, 221, 0.3);
+}
+
+.ctaButtons .btnPrimary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  transform: scale(0);
+  transition: transform 0.6s ease-out;
+}
+
+.ctaButtons .btnPrimary:hover::after {
+  transform: scale(1) rotate(35deg);
+}
+
+.ctaButtons .btnSecondary {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  color: #9d4edd;
+  border: 2px solid #9d4edd;
+}
+
+.ctaButtons .btnSecondary:hover {
+  background: rgba(157, 78, 221, 0.1);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(157, 78, 221, 0.15);
+  border-color: transparent;
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.1) 0%, rgba(90, 24, 154, 0.1) 100%);
+}
+
+/* Enhanced decorative elements */
+.decorativeCircle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(90, 24, 154, 0.1));
+  animation: float 6s ease-in-out infinite;
+  backdrop-filter: blur(4px);
+  z-index: 1; /* Above background, below content */
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+  border: 1px solid rgba(157, 78, 221, 0.1);
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: 1s;
+  border: 1px solid rgba(157, 78, 221, 0.1);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg) scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design - Preserving original breakpoints and sizes */
+@media (max-width: 992px) {
+  .ctaTitle {
+    font-size: 2.2rem; /* Matches original */
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: 60px 0; /* Slightly adjusted but closer to original than new style */
+  }
+  .ctaTitle {
+    font-size: 1.8rem; /* Preserving original */
+  }
+  .ctaText {
+    font-size: 1.1rem; /* Preserving original */
+    margin-bottom: 2rem;
+  }
+  .ctaButtons {
+    flex-direction: column;
+    gap: 15px; /* Preserving original */
+  }
+  .ctaButtons .btnPrimary,
+  .ctaButtons .btnSecondary {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .decorativeCircle {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 576px) {
+  .ctaSection {
+    padding: 60px 0; /* Preserving original */
+  }
+  .ctaTitle {
+    font-size: 1.8rem; /* Preserving original */
+  }
+  .ctaText {
+    font-size: 1rem;
+  }
+  .ctaButtons .btnPrimary,
+  .ctaButtons .btnSecondary {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}

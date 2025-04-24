@@ -1,0 +1,531 @@
+/* components/FeaturedModelsSection/FeaturedModelsSection.module.css */
+.featuredModelsSection {
+  padding: 100px 0;
+  background-color: var(--background-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6617cb, #cb218e);
+  opacity: 0.4;
+  filter: blur(50px);
+}
+
+.shape1 {
+  width: 400px;
+  height: 400px;
+  top: -150px;
+  right: -100px;
+  animation: float1 15s ease-in-out infinite alternate;
+}
+
+.shape2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  left: -50px;
+  animation: float2 20s ease-in-out infinite alternate;
+}
+
+.shape3 {
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 20%;
+  animation: float3 18s ease-in-out infinite alternate;
+}
+
+.shape4 {
+  width: 250px;
+  height: 250px;
+  bottom: 20%;
+  right: 15%;
+  animation: float4 22s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(50px, 50px) rotate(20deg); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-30px, 30px) rotate(-15deg); }
+}
+
+@keyframes float3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -20px) scale(1.1); }
+}
+
+@keyframes float4 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20px, -30px) scale(0.9); }
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  animation: fadeIn 1s ease-out;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-lightest);
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from { 
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideUp {
+  from { 
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.modelsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.modelCard {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--card-bg);
+  position: relative;
+  animation: cardAppear 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 3/4;
+}
+
+.modelCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.modelCard:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.modelCard:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.modelCard:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+@keyframes cardAppear {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.modelCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.modelImage {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.modelCard:hover .modelImage {
+  transform: scale(1.1);
+}
+
+.modelContent {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modelCard:hover .modelContent {
+  transform: translateY(-5px);
+}
+
+.modelTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-lightest);
+  transition: color 0.3s ease;
+}
+
+.modelCard:hover .modelTitle {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.modelCategory {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.modelStats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.modelRating {
+  color: #f1c40f;
+  font-weight: 600;
+}
+
+.modelPrice {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.btnModel {
+  text-align: center;
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(45deg, #6617cb, #cb218e);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnModel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(203, 33, 142, 0.4);
+}
+
+.btnModel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btnModel:hover::after {
+  left: 100%;
+}
+
+.modelsCta {
+  text-align: center;
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+.btnPrimary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(45deg, #6617cb, #cb218e);
+  color: white;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(203, 33, 142, 0.4);
+}
+
+.btnPrimary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btnPrimary:hover::after {
+  left: 100%;
+}
+
+.model1Bg {
+  background-image: url("https://img.freepik.com/premium-photo/anatomy-human-heart-3d-illustration_97886-26368.jpg");
+}
+
+.model1Bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(232, 67, 147, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.model2Bg {
+  background-image: url("https://c8.alamy.com/comp/2GMJ9XN/electric-motor-parts-and-structure-on-black-background-3d-illustration-2GMJ9XN.jpg");
+}
+
+.model2Bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(9, 132, 227, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.model3Bg {
+  background-image: url("https://cdn.pixabay.com/photo/2011/12/14/12/21/orion-nebula-11107_1280.jpg");
+}
+
+.model3Bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 184, 148, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.model4Bg {
+  background-image: url("https://cdn.pixabay.com/photo/2017/01/19/23/46/church-1993645_1280.jpg");
+}
+
+.model4Bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(253, 203, 110, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.imagePlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  z-index: 2;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Update responsive styles */
+@media (max-width: 1200px) {
+  .modelsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modelsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modelsGrid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+}
+
+.languageSelector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.languageButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.globeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-lightest, #ffffff);
+}
+
+.languageModal {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--background-dark, #1a1b1f);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 180px;
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalHeader {
+  padding: 1rem;
+  color: var(--text-lightest, #ffffff);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.languageList {
+  padding: 0.5rem;
+}
+
+.languageOption {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-lightest, #ffffff);
+  cursor: pointer;
+  text-align: left;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.languageOption:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.languageOption.selected {
+  background-color: rgba(102, 23, 203, 0.2);
+  color: #6617cb;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .languageSelector {
+      position: relative;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+  }
+
+  .languageModal {
+      right: 50%;
+      transform: translateX(50%);
+  }
+}
