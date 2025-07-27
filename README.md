@@ -70,5 +70,9 @@ https://eduviz.vercel.app
 🧪 PraveenKumar S
 🏗️ Arjun S 
 
+🏆 Achievements
+🥇 1st Place – Mini Project Expo 2K25, IT Department (Score: 95/100)
+🥇 1st Prize – Project Expo "Vihansa" at Sri Ramakrishna Institute of Technology (₹2000 Cash Prize)
+
 
 
