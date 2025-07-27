@@ -51,15 +51,18 @@ EduViz/
 
 1. **Clone the repository**
 
-git clone https://github.com/your-username/EduViz.git
-cd EduViz
-npm i
-npm run dev
+**git clone https://github.com/your-username/EduViz.git**
+
+
+**cd EduViz**
+**npm i**
+**npm run dev**
 
 
 
-**🌐 Live Demo**
-https://eduviz.vercel.app
+**🌐 Live Demo**:
+
+#https://eduviz.vercel.app
 
 <img width="1851" height="923" alt="image" src="https://github.com/user-attachments/assets/bd252215-7204-4a8a-92ac-e07d43c30c28" />
 
