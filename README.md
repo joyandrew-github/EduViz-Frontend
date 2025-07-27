@@ -1,12 +1,74 @@
-# React + Vite
+# 🧠 EduViz – Interactive 3D Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Tech](https://img.shields.io/badge/tech-Three.js%20%7C%20React%20%7C%20MongoDB-purple)
+![Deployed](https://img.shields.io/badge/deployed-Vercel-black)
 
-Currently, two official plugins are available:
+**EduViz** is an innovative web-based platform that transforms traditional learning into an engaging 3D experience. It allows students to explore interactive 3D models of complex subjects like engineering, medicine, and architecture, enhancing conceptual understanding and retention.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🧑‍🏫 **Interactive 3D Learning**  
+  Visualize complex topics using Three.js-powered 3D models for immersive education.
+
+- 🗂️ **Subject-Based Navigation**  
+  Categorized content for Engineering, Medicine, Physics, and Architecture.
+
+- 🧭 **Dynamic Scene Interaction**  
+  Zoom, rotate, and explore each 3D model with real-time rendering controls.
+
+- 🔒 **Role-Based Authentication**  
+  Students and Admins have separate dashboards and access levels.
+
+- 📂 **GridFS Storage**  
+  Efficient storage of large 3D model files and assets.
+
+---
+
+## 🛠️ Tech Stack
+
+| Frontend | Backend | Database | 3D Engine | Auth | Storage |
+|----------|---------|----------|-----------|------|---------|
+| React.js | Node.js + Express.js | MongoDB | Three.js | JWT / Firebase | GridFS |
+
+---
+
+## 📁 Folder Structure
+
+EduViz/
+├── client/ # React + Three.js Frontend
+├── server/ # Node.js + Express Backend
+└── README.md
+
+
+
+---
+
+## 💻 Local Setup Instructions
+
+1. **Clone the repository**
+
+git clone https://github.com/your-username/EduViz.git
+cd EduViz
+npm i
+npm run dev
+
+
+
+**🌐 Live Demo**
+https://eduviz.vercel.app
+
+<img width="1851" height="923" alt="image" src="https://github.com/user-attachments/assets/bd252215-7204-4a8a-92ac-e07d43c30c28" />
+
+**👨‍💻 Developers**
+
+👨‍💻 Joyandrew S 
+🧠 Dhusyanth S 
+🧪 PraveenKumar S
+🏗️ Arjun S 
+
+
+
